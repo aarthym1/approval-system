@@ -18,8 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', include('admin_app.urls')),
-    path('faculty/', include('faculty_app.urls')),
-    path('student/', include('student_app.urls')),
-    path('superadmin/', admin.site.urls),  # Django's default admin
+    path('django-admin/', admin.site.urls),        # default Django admin
+    path('admin/', include('admin_app.urls')),     # your admin app
+    path('faculty/', include('faculty.urls')), # your faculty app
+    path('student/', include('student.urls')), # your student app
 ]
+
