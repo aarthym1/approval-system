@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Projects Overview{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-header">All Projects Submitted</div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Project Title</th>
+                    <th>Student</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AI Chatbot</td>
+                    <td>Student A</td>
+                    <td>Approved</td>
+                </tr>
+                <tr>
+                    <td>IoT Smart Home</td>
+                    <td>Student B</td>
+                    <td>Pending</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,102 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Home</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #007BFF; /* Blue background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .card {
-            background-color: #fff; /* White card */
-            border: 2px solid #007BFF; /* Blue border */
-            border-radius: 12px;
-            width: 400px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .card h1 {
-            color: #007BFF;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .card label {
-            display: block;
-            margin: 10px 0 5px;
-            color: #007BFF;
-            font-weight: bold;
-        }
-
-        .card input[type="text"], 
-        .card input[type="email"], 
-        .card input[type="password"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #007BFF;
-            border-radius: 6px;
-        }
-
-        .card input[type="checkbox"] {
-            accent-color: #007BFF; /* Checkbox color */
-            margin-right: 10px;
-        }
-
-        .card button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .card button:hover {
-            background-color: #0056b3;
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-    </style>
-</head>
-<body>
-    <div class="card">
-        <h1>Student Dashboard</h1>
-
-        <label for="name">Name:</label>
-        <input type="text" id="name" placeholder="Enter your name">
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="Enter your email">
-
-        <div class="checkbox-group">
-            <input type="checkbox" id="project_submitted">
-            <label for="project_submitted">Project Submitted</label>
-        </div>
-
-        <div class="checkbox-group">
-            <input type="checkbox" id="project_approved">
-            <label for="project_approved">Project Approved</label>
-        </div>
-
-        <button>Update Status</button>
+{% extends "base.html" %}
+{% block title %}Student Home{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-header">Student Dashboard</div>
+    <div class="card-body">
+        <p>Welcome Student! Choose an option:</p>
+        <ul>
+            <li><a href="{% url 'submit_project' %}">Submit Project</a></li>
+            <li><a href="{% url 'project_status' %}">View Project Status</a></li>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+        </ul>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

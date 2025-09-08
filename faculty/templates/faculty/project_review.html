@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Review Projects{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-header">Review Project Submissions</div>
+    <div class="card-body">
+        <h5>Project Title: Smart Agriculture System</h5>
+        <p><strong>Abstract:</strong> Uploaded by Student 1</p>
+        <p><strong>Requirements:</strong> Sensors, IoT Devices</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" name="approve" class="btn btn-success">Approve</button>
+            <button type="submit" name="reject" class="btn btn-danger">Reject</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

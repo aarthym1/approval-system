@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Manage Users{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-header">User Management</div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Add User (email)</label>
+                <input type="email" class="form-control" name="email">
+            </div>
+            <button type="submit" class="btn btn-primary">Add User</button>
+        </form>
+        <hr>
+        <h5>Existing Users</h5>
+        <ul>
+            <li>student1@example.com <button class="btn btn-sm btn-danger">Delete</button></li>
+            <li>faculty1@example.com <button class="btn btn-sm btn-danger">Delete</button></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
